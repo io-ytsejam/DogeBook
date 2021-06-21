@@ -1,5 +1,5 @@
 # Stage 1 - Build frontend
-FROM node:13 as react-build
+FROM node:14 as react-build
 WORKDIR /webapp
 COPY . ./
 RUN npm rebuild node-sass
