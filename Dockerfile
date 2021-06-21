@@ -15,4 +15,4 @@ FROM openjdk:16-jdk-alpine
 VOLUME /tmp
 COPY --from=build /workspace/app/target/*.jar app.jar
 EXPOSE 5000
-ENTRYPOINT java -jar app.jar --server.port=5000 --spring.datasource.url=$DB_URL --spring.datasource.password=$DB_PASSWORD --spring.datasource.username=$DB_USERNAME
+ENTRYPOINT java -jar app.jar

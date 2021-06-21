@@ -8,7 +8,7 @@ services:
     working_dir: /webapp
 
   backend:
-    build: ./Dockerfile
+    build: ./
 
   db:
     image: mariadb:10.6.1
@@ -17,11 +17,4 @@ services:
       - MARIADB_ROOT_PASSWORD=utRgB9m5sd2MTnKy5K5GWEvpnrttx9RD
     volumes:
       - ./data:/var/lib/mysql
-    ports:
-      - 33060:3306
 
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
