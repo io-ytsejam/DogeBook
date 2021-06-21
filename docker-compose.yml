@@ -1,5 +1,15 @@
 version: "3.7"
 services:
+  frontend:
+    build: ./webapp/Dockerfile
+    restart: always
+    ports:
+      - "80:80"
+    working_dir: /frontend
+
+  backend:
+    build: ./Dockerfile
+
   db:
     image: mariadb:10.6.1
     restart: always
