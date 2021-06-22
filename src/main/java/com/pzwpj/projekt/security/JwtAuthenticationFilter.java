@@ -51,10 +51,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 
-            UserDetails deanDetails = dogeService.loadUserByUsername(username);
+            UserDetails dogeDetails = dogeService.loadUserByUsername(username);
 
-            if (jwtTokenUtil.validateToken(authToken, deanDetails)) {
-                UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(deanDetails, null, Arrays.asList(new SimpleGrantedAuthority("ROLE_USER")));
+            if (jwtTokenUtil.validateToken(authToken, dogeDetails)) {
+                UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(dogeDetails, null, Arrays.asList(new SimpleGrantedAuthority("ROLE_USER")));
                 authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(req));
                 logger.info("authenticated user " + username + ", setting security context");
                 SecurityContextHolder.getContext().setAuthentication(authentication);

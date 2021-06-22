@@ -17,4 +17,5 @@ services:
       - MARIADB_ROOT_PASSWORD=utRgB9m5sd2MTnKy5K5GWEvpnrttx9RD
     volumes:
       - ./data:/var/lib/mysql
-
+    ports:
+      - 3306:3306
